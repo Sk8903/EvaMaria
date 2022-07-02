@@ -29,6 +29,11 @@ logger.setLevel(logging.ERROR)
 BUTTONS = {}
 SPELL_CHECK = {}
 
+API_KEY = "8e2efa19dd120689726f546ecfd01c712138922c"
+SITE = "shorturllink.in"
+
+##############################################################################################################################
+
 @Client.on_message(filters.group & filters.text & ~filters.edited & filters.incoming)
 async def give_filter(client, message):
     k = await manual_filters(client, message)
