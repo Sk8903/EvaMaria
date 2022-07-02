@@ -85,7 +85,7 @@ async def next_page(bot, query):
 
     btn.insert(0, 
         [
-            InlineKeyboardButton(❤️‍🔥 𝖲𝖤𝖱𝖨𝖠𝖫 𝖭𝖠𝖬𝖤 : {search} ❤️‍🔥', 'reqst1')
+            InlineKeyboardButton(f'❤️‍🔥 𝖲𝖤𝖱𝖨𝖠𝖫 𝖭𝖠𝖬𝖤 : {search} ❤️‍🔥', 'reqst1')
         ]
     )
     btn.insert(1,
@@ -674,7 +674,7 @@ async def auto_filter(client, msg, spoll=False):
 
     btn.insert(0, 
         [
-            InlineKeyboardButton(❤️‍🔥 𝖲𝖤𝖱𝖨𝖠𝖫 𝖭𝖠𝖬𝖤 : {search} ❤️‍🔥', 'reqst1')
+            InlineKeyboardButton(f'❤️‍🔥 𝖲𝖤𝖱𝖨𝖠𝖫 𝖭𝖠𝖬𝖤 : {search} ❤️‍🔥', 'reqst1')
         ]
     )
     btn.insert(1,
