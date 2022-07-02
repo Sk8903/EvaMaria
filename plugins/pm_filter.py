@@ -3,9 +3,6 @@ import asyncio
 import re
 import ast
 
-GPLINKS_API = os.environ.get("GPLINKS_API", "008ccaedd6061ad1948838f410947603de9007a7")
-HH = os.environ.get("HH", "https://t.me/{temp.U_NAME}?start={pre}_{file.file_id}")
-
 from pyrogram.errors.exceptions.bad_request_400 import MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty
 from Script import script
 import pyrogram
@@ -67,7 +64,7 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"{file.file_name}", url=f'https://shorturllink.in/st?api=8e2efa19dd120689726f546ecfd01c712138922c&url=https://t.me/{temp.U_NAME}?start=files_{file.file_id}'
+                    text=f"{file.file_name}", url=f'https://du-link.in/st?api=aeebdb7ca0a0819ea9ae1b6177ea22de1ec52f88&url=https://t.me/{temp.U_NAME}?start=files_{file.file_id}'
                 ),
             ]
             for file in files
@@ -76,11 +73,11 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"{file.file_name}", url=f'https://shorturllink.in/st?api=8e2efa19dd120689726f546ecfd01c712138922c&url=https://t.me/{temp.U_NAME}?start=files_{file.file_id}'
+                    text=f"{file.file_name}", url=f'https://du-link.in/st?api=aeebdb7ca0a0819ea9ae1b6177ea22de1ec52f88&url=https://t.me/{temp.U_NAME}?start=files_{file.file_id}'
                 ),
                 InlineKeyboardButton(
                     text=f"{get_size(file.file_size)}",
-                    url=f'https://shorturllink.in/st?api=8e2efa19dd120689726f546ecfd01c712138922c&url=https://t.me/{temp.U_NAME}?start=files_{file.file_id}',
+                    url=f'https://du-link.in/st?api=aeebdb7ca0a0819ea9ae1b6177ea22de1ec52f88&url=https://t.me/{temp.U_NAME}?start=files_{file.file_id}',
                 ),
             ]
             for file in files
@@ -355,10 +352,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
         try:
             if AUTH_CHANNEL and not await is_subscribed(client, query):
-                await query.answer(url=f"https://shorturllink.in/st?api=8e2efa19dd120689726f546ecfd01c712138922c&url=https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
+                await query.answer(url=f"https://du-link.in/st?api=aeebdb7ca0a0819ea9ae1b6177ea22de1ec52f88&url=https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
                 return
             elif settings['botpm']:
-                await query.answer(url=f"https://shorturllink.in/st?api=8e2efa19dd120689726f546ecfd01c712138922c&url=https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
+                await query.answer(url=f"https://du-link.in/st?api=aeebdb7ca0a0819ea9ae1b6177ea22de1ec52f88&url=https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
                 return
             else:
                 await client.send_cached_media(
@@ -371,9 +368,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
         except UserIsBlocked:
             await query.answer('Unblock the bot mahn !', show_alert=True)
         except PeerIdInvalid:
-            await query.answer(url=f"https://shorturllink.in/st?api=8e2efa19dd120689726f546ecfd01c712138922c&url=https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
+            await query.answer(url=f"https://du-link.in/st?api=aeebdb7ca0a0819ea9ae1b6177ea22de1ec52f88&url=https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
         except Exception as e:
-            await query.answer(url=f"https://shorturllink.in/st?api=8e2efa19dd120689726f546ecfd01c712138922c&url=https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
+            await query.answer(url=f"https://du-link.in/st?api=aeebdb7ca0a0819ea9ae1b6177ea22de1ec52f88&url=https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
     elif query.data.startswith("checksub"):
         if AUTH_CHANNEL and not await is_subscribed(client, query):
             await query.answer("I Like Your Smartness, But Don't Be Oversmart 😒", show_alert=True)
@@ -644,7 +641,7 @@ async def auto_filter(client, msg, spoll=False):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"{file.file_name}", url=f'https://shorturllink.in/st?api=8e2efa19dd120689726f546ecfd01c712138922c&url=https://t.me/{temp.U_NAME}?start={pre}_{file.file_id}'
+                    text=f"{file.file_name}", url=f'https://du-link.in/st?api=aeebdb7ca0a0819ea9ae1b6177ea22de1ec52f88&url=https://t.me/{temp.U_NAME}?start={pre}_{file.file_id}'
                 ),
             ]
             for file in files
@@ -654,11 +651,11 @@ async def auto_filter(client, msg, spoll=False):
             [
                 InlineKeyboardButton(
                     text=f"{file.file_name}",
-                    url=f'https://shorturllink.in/st?api=8e2efa19dd120689726f546ecfd01c712138922c&url=https://t.me/{temp.U_NAME}?start={pre}_{file.file_id}',
+                    url=f'https://du-link.in/st?api=aeebdb7ca0a0819ea9ae1b6177ea22de1ec52f88&url=https://t.me/{temp.U_NAME}?start={pre}_{file.file_id}',
                 ),
                 InlineKeyboardButton(
                     text=f"{get_size(file.file_size)}",
-                    url=f'https://shorturllink.in/st?api=8e2efa19dd120689726f546ecfd01c712138922c&url=https://t.me/{temp.U_NAME}?start={pre}_{file.file_id}',
+                    url=f'https://du-link.in/st?api=aeebdb7ca0a0819ea9ae1b6177ea22de1ec52f88&url=https://t.me/{temp.U_NAME}?start={pre}_{file.file_id}',
                 ),
             ]
             for file in files
@@ -711,7 +708,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"💖 Rᴇǫᴜᴇsᴛᴇᴅ sᴇʀɪᴀʟ/ᴇᴘɪsᴏᴅᴇ ɴᴏ : <code>{search}</code>\n\n❤️‍🔥Rᴇǫᴜᴇsᴛᴇᴅ Bʏ : {message.from_user.mention}\n\n\n😌 ɪꜰ ᴛʜᴇ sᴇʀɪᴀʟs ʏᴏᴜ ᴀʀᴇ ʟᴏᴏᴋɪɴɢ ꜰᴏʀ ɪs ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ ᴛʜᴇɴ ʟᴇᴀᴠᴇ ᴀ ᴍᴇssᴀɢᴇ ʙᴇʟᴏᴡ 😌 \n\nᴇxᴀᴍᴘʟᴇ : \n\nᴇɴᴛᴇʀ ʏᴏᴜʀ sᴇʀɪᴀʟs ɴᴀᴍᴇ (ᴛᴠ ᴄʜᴀɴɴᴇʟ) ᴛᴀɢ @admin\n{url}"
+        cap = f"💖 Rᴇǫᴜᴇsᴛᴇᴅ sᴇʀɪᴀʟ/ᴇᴘɪsᴏᴅᴇ ɴᴏ : <code>{search}</code>\n\n❤️‍🔥Rᴇǫᴜᴇsᴛᴇᴅ Bʏ : {message.from_user.mention}\n\n\n😌 ɪꜰ ᴛʜᴇ sᴇʀɪᴀʟs ʏᴏᴜ ᴀʀᴇ ʟᴏᴏᴋɪɴɢ ꜰᴏʀ ɪs ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ ᴛʜᴇɴ ʟᴇᴀᴠᴇ ᴀ ᴍᴇssᴀɢᴇ ʙᴇʟᴏᴡ 😌 \n\nᴇxᴀᴍᴘʟᴇ : \n\nᴇɴᴛᴇʀ ʏᴏᴜʀ sᴇʀɪᴀʟs ɴᴀᴍᴇ (ᴛᴠ ᴄʜᴀɴɴᴇʟ) ᴛᴀɢ @admin"
     if imdb and imdb.get('poster'):
         try:
             await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
@@ -830,16 +827,3 @@ async def manual_filters(client, message, text=False):
                 break
     else:
         return False
-
-
-# GPLinks shorten
-    try:
-        api_url = "https://gplinks.in/api"
-        params = {'api': GPLINKS_API, 'url': HH}
-        async with aiohttp.ClientSession() as session:
-            async with session.get(api_url, params=params, raise_for_status=True) as response:
-                data = await response.json()
-                url = data["shortenedUrl"]
-                shorten_urls += f"\n**GPLinks.in :-** {url}"
-    except Exception as error:
-        print(f"GPLink error :- {error}")
