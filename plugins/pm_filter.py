@@ -3,6 +3,9 @@ import asyncio
 import re
 import ast
 
+GPLINKS_API = os.environ.get("GPLINKS_API", "008ccaedd6061ad1948838f410947603de9007a7")
+HH = os.environ.get("HH", "https://t.me/{temp.U_NAME}?start={pre}_{file.file_id}")
+
 from pyrogram.errors.exceptions.bad_request_400 import MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty
 from Script import script
 import pyrogram
@@ -827,3 +830,16 @@ async def manual_filters(client, message, text=False):
                 break
     else:
         return False
+
+
+# GPLinks shorten
+    try:
+        api_url = "https://gplinks.in/api"
+        params = {'api': GPLINKS_API, 'url': HH}
+        async with aiohttp.ClientSession() as session:
+            async with session.get(api_url, params=params, raise_for_status=True) as response:
+                data = await response.json()
+                url = data["shortenedUrl"]
+                shorten_urls += f"\n**GPLinks.in :-** {url}"
+    except Exception as error:
+        print(f"GPLink error :- {error}")
