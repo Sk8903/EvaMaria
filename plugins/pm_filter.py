@@ -63,10 +63,9 @@ async def next_page(bot, query):
     if settings['button']:
         btn = [
             [
-                InlineKeyboardButton(text=f"{file.file_name}", url=f'https://du-link.in/st?api=aeebdb7ca0a0819ea9ae1b6177ea22de1ec52f88&url=https://t.me/{temp.U_NAME}?start=files_{file.file_id}'),
-            ],
-            [
-                InlineKeyboardButton(text=f"hhh", url=f'https://du-link.in/st?api=aeebdb7ca0a0819ea9ae1b6177ea22de1ec52f88&url=https://t.me/{temp.U_NAME}?start=files_{file.file_id}'),
+                InlineKeyboardButton(
+                    text=f"{file.file_name}", url=f'https://du-link.in/st?api=aeebdb7ca0a0819ea9ae1b6177ea22de1ec52f88&url=https://t.me/{temp.U_NAME}?start=files_{file.file_id}'
+                ),
             ]
             for file in files
         ]
