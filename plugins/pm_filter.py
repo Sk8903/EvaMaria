@@ -666,7 +666,7 @@ async def auto_filter(client, msg, spoll=False):
             for file in files
         ]
 
-    btn.insert(1,
+    btn.insert(0,
         [
             InlineKeyboardButton(f'📥 𝖧𝖮𝖶 𝖳𝖮 𝖣𝖮𝖶𝖭𝖫𝖮𝖠𝖣 📥', 'info')
         ]
