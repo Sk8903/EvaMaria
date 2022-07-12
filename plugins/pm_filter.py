@@ -82,12 +82,7 @@ async def next_page(bot, query):
             for file in files
         ]
 
-    btn.insert(0, 
-        [
-            InlineKeyboardButton(f'❤️‍🔥 𝖲𝖤𝖱𝖨𝖠𝖫 𝖭𝖠𝖬𝖤 : {search} ❤️‍🔥', 'reqst1')
-        ]
-    )
-    btn.insert(1,
+    btn.insert(0,
         [
             InlineKeyboardButton(f'📥 𝖧𝖮𝖶 𝖳𝖮 𝖣𝖮𝖶𝖭𝖫𝖮𝖠𝖣 📥', 'info')
         ]
@@ -671,11 +666,6 @@ async def auto_filter(client, msg, spoll=False):
             for file in files
         ]
 
-    btn.insert(0, 
-        [
-            InlineKeyboardButton(f'❤️‍🔥 𝖲𝖤𝖱𝖨𝖠𝖫 𝖭𝖠𝖬𝖤 : {search} ❤️‍🔥', 'reqst1')
-        ]
-    )
     btn.insert(1,
         [
             InlineKeyboardButton(f'📥 𝖧𝖮𝖶 𝖳𝖮 𝖣𝖮𝖶𝖭𝖫𝖮𝖠𝖣 📥', 'info')
@@ -729,7 +719,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"💖 Rᴇǫᴜᴇsᴛᴇᴅ sᴇʀɪᴀʟ/ᴇᴘɪsᴏᴅᴇ ɴᴏ : <code>{search}</code>\n\n❤️‍🔥Rᴇǫᴜᴇsᴛᴇᴅ Bʏ : {message.from_user.mention}\n\n\n😌 ɪꜰ ᴛʜᴇ sᴇʀɪᴀʟs ʏᴏᴜ ᴀʀᴇ ʟᴏᴏᴋɪɴɢ ꜰᴏʀ ɪs ɴᴏᴛ ᴀᴠᴀɪʟᴀʙʟᴇ ᴛʜᴇɴ ʟᴇᴀᴠᴇ ᴀ ᴍᴇssᴀɢᴇ ʙᴇʟᴏᴡ 😌 \n\nᴇxᴀᴍᴘʟᴇ : \n\nᴇɴᴛᴇʀ ʏᴏᴜʀ sᴇʀɪᴀʟs ɴᴀᴍᴇ (ᴛᴠ ᴄʜᴀɴɴᴇʟ) ᴛᴀɢ @admin"
+        cap = f"❤️ sᴇʀɪᴀʟ ɴᴀᴍᴇ : <code>{search}</code>"
     if imdb and imdb.get('poster'):
         try:
             await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
