@@ -63,7 +63,7 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"{file.file_name}", url=await newlink(f'https://shorturllink.in/st?api=8e2efa19dd120689726f546ecfd01c712138922c&url=https://t.me/{temp.U_NAME}?start=files_{file.file_id})
+                    text=f"[{get_size(file.file_size)}] {file.file_name}", url=await newlink(f"https://telegram.me/{temp.U_NAME}?start=files#{file.file_id}")
                 ),
             ]
             for file in files
@@ -72,11 +72,11 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"{file.file_name}", url=await newlink(f'https://shorturllink.in/st?api=8e2efa19dd120689726f546ecfd01c712138922c&url=https://t.me/{temp.U_NAME}?start=files_{file.file_id}),
+                    text=f"{file.file_name}", url=await newlink(f"https://telegram.me/{temp.U_NAME}?start=files#{file.file_id}")
                 ),
                 InlineKeyboardButton(
                     text=f"{get_size(file.file_size)}",
-                    url=await newlink(f'https://shorturllink.in/st?api=8e2efa19dd120689726f546ecfd01c712138922c&url=https://t.me/{temp.U_NAME}?start=files_{file.file_id}),
+                    url=await newlink(f"https://telegram.me/{temp.U_NAME}?start=files#{file.file_id}"),
                 ),
             ]
             for file in files
