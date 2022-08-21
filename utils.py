@@ -13,6 +13,9 @@ from pyrogram.types import InlineKeyboardButton
 from database.users_chats_db import db
 from bs4 import BeautifulSoup
 import requests
+import pyshorteners
+import aiohttp
+import shortzy
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
