@@ -1,6 +1,6 @@
 import logging
 from pyrogram.errors import InputUserDeactivated, UserNotParticipant, FloodWait, UserIsBlocked, PeerIdInvalid
-from info import AUTH_CHANNEL, LONG_IMDB_DESCRIPTION, MAX_LIST_ELM
+from info import *
 from imdb import IMDb
 import asyncio
 from pyrogram.types import Message
@@ -382,7 +382,7 @@ def humanbytes(size):
 shortz = shortzy.Shortzy(DROPLINK_API, "shareus.in")
 
 ####################  droplink  ####################
-async def droplink_url(link):
+async def newlink(link):
     print(link)
     if LONG_DROPLINK_URL == "True" or LONG_DROPLINK_URL is True:
         return await shortz.get_quick_link(link, silently_fail=True)
