@@ -646,31 +646,25 @@ async def auto_filter(client, msg, spoll=False):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"{file.file_name}", url=await newlink(f'https://shorturllink.in/st?api=8e2efa19dd120689726f546ecfd01c712138922c&url=https://t.me/{temp.U_NAME}?start={pre}_{file.file_id})
+                    text=f"[{get_size(file.file_size)}] {file.file_name}", url=await newlink(f"https://telegram.me/{temp.U_NAME}?start={pre}_{file.file_id}")
                 ),
             ]
             for file in files
-         ]
+        ]
     else:
         btn = [
             [
                 InlineKeyboardButton(
                     text=f"{file.file_name}",
-                    url=await newlink(f'https://shorturllink.in/st?api=8e2efa19dd120689726f546ecfd01c712138922c&url=https://t.me/{temp.U_NAME}?start={pre}_{file.file_id}),
+                    url=await newlink(f"https://telegram.me/{temp.U_NAME}?start={pre}_{file.file_id}"),
                 ),
                 InlineKeyboardButton(
                     text=f"{get_size(file.file_size)}",
-                    url=await newlink(f'https://shorturllink.in/st?api=8e2efa19dd120689726f546ecfd01c712138922c&url=https://t.me/{temp.U_NAME}?start={pre}_{file.file_id}),
+                    url=await newlink(f"https://telegram.me/{temp.U_NAME}?start={pre}_{file.file_id}"),
                 ),
             ]
             for file in files
         ]
-
-    btn.insert(0,
-        [
-            InlineKeyboardButton(f'📥 𝖧𝖮𝖶 𝖳𝖮 𝖣𝖮𝖶𝖭𝖫𝖮𝖠𝖣 📥', 'info')
-        ]
-    )
 
     if offset != "":
         key = f"{message.chat.id}-{message.message_id}"
